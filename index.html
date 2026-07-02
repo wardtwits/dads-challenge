@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dad's Challenge Board</title>
+  <meta name="description" content="A client-side gamified challenge dashboard for Pierce and Graham to track their scores, view challenges, and log completions.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Bar / Navigation / Leaderboard -->
+  <nav class="top-nav" aria-label="Main Navigation">
+    <div class="nav-brand" id="nav-brand-logo">
+      <span class="logo-emoji">⚡</span> Dad's Board
+    </div>
+    
+    <!-- Live Leaderboard -->
+    <div class="leaderboard-preview" id="global-leaderboard" aria-label="Current Scores">
+      <div class="leaderboard-title">LEADERBOARD</div>
+      <div class="scores-container">
+        <div class="player-score-tag pierce-tag" id="leaderboard-pierce">
+          <span class="player-name">Pierce</span>
+          <span class="player-points" id="lb-pts-pierce">0 PTS</span>
+        </div>
+        <div class="score-vs">VS</div>
+        <div class="player-score-tag graham-tag" id="leaderboard-graham">
+          <span class="player-name">Graham</span>
+          <span class="player-points" id="lb-pts-graham">0 PTS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active User Profile Section -->
+    <div class="auth-section" id="nav-auth-section">
+      <button class="btn btn-primary btn-glow" id="btn-show-login">LOG IN</button>
+      <div class="user-profile-badge hidden" id="user-profile-badge">
+        <span class="user-avatar" id="current-user-avatar">👦</span>
+        <div class="user-meta">
+          <span class="user-name" id="current-user-name">Player</span>
+          <span class="user-score" id="current-user-score">0 PTS</span>
+        </div>
+        <button class="btn-logout" id="btn-logout" title="Log Out" aria-label="Log Out">✖</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <header class="hero-header">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-content">
+      <h1 class="hero-title" data-text="DAD'S CHALLENGE BOARD">DAD'S CHALLENGE BOARD</h1>
+      <p class="hero-subtitle">Complete quests, submit proof, and claim absolute victory. Pierce vs Graham.</p>
+    </div>
+  </header>
+
+  <!-- Main Challenge Grid -->
+  <main class="main-container">
+    <section class="challenges-section">
+      <h2 class="section-title">CHALLENGES</h2>
+      <div class="challenges-grid" id="challenges-grid">
+        <!-- Rendered dynamically by app.js -->
+        <div class="loading-placeholder">Loading Quest Log...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay hidden" id="login-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content login-box">
+      <button class="modal-close" id="btn-close-login" aria-label="Close modal">&times;</button>
+      <h2 class="modal-title">ACCESS PORTAL</h2>
+      <p class="modal-subtitle">Choose your avatar and enter your credentials</p>
+      
+      <div class="login-avatar-select">
+        <div class="avatar-option" data-username="pierce" tabindex="0">
+          <span class="avatar-emoji">👦</span>
+          <span class="avatar-label">Pierce</span>
+        </div>
+        <div class="avatar-option" data-username="graham" tabindex="0">
+          <span class="avatar-emoji">🧑</span>
+          <span class="avatar-label">Graham</span>
+        </div>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" required placeholder="Enter username (pierce or graham)" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <div id="login-error-msg" class="error-text hidden">Invalid credentials. Try again!</div>
+        <button type="submit" class="btn btn-block btn-primary btn-glow" id="btn-submit-login">UNLOCK INTERFACE</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Challenge Details Modal -->
+  <div class="modal-overlay hidden" id="details-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content details-box">
+      <button class="modal-close" id="btn-close-details" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header-section">
+        <span class="detail-icon" id="detail-challenge-icon">🔍</span>
+        <div>
+          <h2 class="modal-title text-left" id="detail-challenge-title">Quest Details</h2>
+          <span class="badge badge-pts" id="detail-challenge-points">0 PTS</span>
+        </div>
+      </div>
+      
+      <div class="modal-body-section">
+        <div class="challenge-desc-card">
+          <h3 class="desc-heading">Quest Description</h3>
+          <p id="detail-challenge-description">Quest instructions go here...</p>
+        </div>
+
+        <!-- Lock Warning (If not logged in) -->
+        <div class="lock-warning-card" id="lock-warning">
+          <span class="lock-icon">🔒</span>
+          <h3>Quest Locked</h3>
+          <p>You must log in as Pierce or Graham to view challenge details and submit your completion logs.</p>
+          <button class="btn btn-secondary" id="btn-trigger-login-from-modal">Log In Now</button>
+        </div>
+
+        <!-- Submission Form (If logged in) -->
+        <form id="submission-form" class="hidden">
+          <input type="hidden" id="submission-challenge-id">
+          
+          <div class="submission-status-badge hidden" id="completed-badge">
+            <span class="check-mark">✓</span> Quest Completed! You earned points.
+          </div>
+          
+          <div class="form-group">
+            <label for="submission-text" id="submission-label">Submit Your Completion Notes</label>
+            <p class="form-help-text" id="submission-help">Tell Dad what you did, how you solved it, measurements, or the secret code. Once submitted, you'll earn points!</p>
+            <textarea id="submission-text" required placeholder="Type your answers, details, or funny catchphrase here..." rows="4"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-glow" id="btn-submit-proof">SUBMIT PROOF</button>
+            <span class="points-warning-note" id="points-warning">Points can only be earned once!</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dad's Control Center Modal -->
+  <div class="modal-overlay hidden" id="dad-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content dad-box">
+      <button class="modal-close" id="btn-close-dad" aria-label="Close modal">&times;</button>
+      <h2 class="modal-title">DAD'S COMMAND CENTER</h2>
+      <p class="modal-subtitle">Review proof submissions and manage player databases</p>
+
+      <!-- Dad login form if not authenticated as Dad -->
+      <form id="dad-login-form">
+        <div class="form-group">
+          <label for="dad-password">Access PIN / Password</label>
+          <input type="password" id="dad-password" required placeholder="Enter Dad's password" autocomplete="current-password">
+        </div>
+        <div id="dad-login-error" class="error-text hidden">Access denied. Secret PIN incorrect.</div>
+        <button type="submit" class="btn btn-block btn-primary">VERIFY AUTHORIZATION</button>
+      </form>
+
+      <!-- Dad's active dashboard panel -->
+      <div id="dad-panel" class="hidden">
+        <div class="dad-tabs">
+          <button class="tab-btn active" data-tab="tab-submissions">Kids' Submissions</button>
+          <button class="tab-btn" data-tab="tab-settings">System Settings</button>
+        </div>
+
+        <!-- Submissions Tab -->
+        <div class="tab-pane active" id="tab-submissions">
+          <div class="submissions-list" id="dad-submissions-container">
+            <!-- Populated dynamically -->
+            <p class="no-submissions">No submissions yet.</p>
+          </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="tab-pane" id="tab-settings">
+          <div class="danger-zone">
+            <h3>Danger Zone</h3>
+            <p>Warning: Resets cannot be undone. Be careful!</p>
+            <div class="btn-group">
+              <button class="btn btn-danger" id="btn-reset-pierce">Reset Pierce's Progress</button>
+              <button class="btn btn-danger" id="btn-reset-graham">Reset Graham's Progress</button>
+            </div>
+            <div class="btn-group" style="margin-top: 15px;">
+              <button class="btn btn-danger btn-block" id="btn-reset-all">Reset All Progress (Both Players)</button>
+            </div>
+          </div>
+
+          <div class="backup-restore-zone" style="margin-top: 25px;">
+            <h3>Backup & Restore Database</h3>
+            <p>Save or restore the current state of scores and submissions.</p>
+            <div class="btn-group">
+              <button class="btn btn-secondary" id="btn-export-data">Export JSON Data</button>
+              <button class="btn class-import btn-secondary" id="btn-import-data-trigger">Import JSON Data</button>
+            </div>
+            <input type="file" id="import-data-file" class="hidden" accept=".json">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Completion Toast / Alert -->
+  <div class="toast-notification hidden" id="completion-toast">
+    <div class="toast-icon">✨</div>
+    <div class="toast-body">
+      <div class="toast-title">QUEST COMPLETED!</div>
+      <div class="toast-msg">+10 Points awarded! Excellent work.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-links">
+      <a href="#home" id="footer-link-home">Home</a>
+      <span>&bull;</span>
+      <button class="dad-login-link" id="btn-trigger-dad-console" aria-label="Open Dad Console">
+        <span class="padlock-icon">🔒</span> Dad Console
+      </button>
+    </div>
+    <div class="footer-copyright">
+      Created by Dad with ❤️ &bull; Gamified Challenge System
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="challenges.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
