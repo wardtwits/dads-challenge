@@ -16,25 +16,16 @@
 
   <!-- Top Bar / Navigation / Leaderboard -->
   <nav class="top-nav" aria-label="Main Navigation">
-    <div class="nav-brand" id="nav-brand-logo">
+    <div class="nav-brand badge-wiggle" id="nav-brand-logo">
       <span class="logo-emoji">⚡</span> Dad's Board
     </div>
     
-    <!-- Live Leaderboard --><!-- 1st secret message - hidden code word #: dog -->
-    <div class="leaderboard-preview" id="global-leaderboard" aria-label="Current Scores">
-      <div class="leaderboard-title">LEADERBOARD</div>
-      <div class="scores-container ">
-        <div class="player-score-tag pierce-tag" id="leaderboard-pierce">
-          <span class="player-name">Pierce</span>
-          <span class="player-points" id="lb-pts-pierce">0 PTS</span>
-        </div>
-        <div class="score-vs">VS</div>
-        <div class="player-score-tag graham-tag" id="leaderboard-graham">
-          <span class="player-name">Graham</span>
-          <span class="player-points" id="lb-pts-graham">0 PTS</span>
-        </div>
-      </div>
-    </div>
+    <!-- Live Leaderboard -->
+    <p class="secret">1st secret message - hidden code word #: dog</p>
+    <p class="secret">Cats enjoy riding on rainbows</p>
+        <p class="secret">Batman is not a bat or a man</p>
+
+
 
     <!-- Active User Profile Section -->
     <div class="auth-section" id="nav-auth-section">
@@ -55,14 +46,27 @@
     <div class="hero-bg-glow"></div>
     <div class="hero-content">
       <h1 class="hero-title" data-text="DAD'S CHALLENGE BOARD">DAD'S CHALLENGE BOARD</h1>
-      <p class="hero-subtitle">Complete quests, submit proof, and claim absolute victory. <br>Pierce vs Graham.</p>
+    <div class="leaderboard-preview" id="global-leaderboard" aria-label="Current Scores">
+      <div class="leaderboard-title">LEADERBOARD</div>
+      <div class="scores-container ">
+        <div class="player-score-tag pierce-tag" id="leaderboard-pierce">
+          <span class="player-name">Pierce</span>
+          <span class="player-points" id="lb-pts-pierce">0 PTS</span>
+        </div>
+        <div class="score-vs">VS</div>
+        <div class="player-score-tag graham-tag" id="leaderboard-graham">
+          <span class="player-name">Graham</span>
+          <span class="player-points" id="lb-pts-graham">0 PTS</span>
+        </div>
+      </div>
     </div>
+      </div>
   </header>
 
   <!-- Main Challenge Grid -->
   <main class="main-container">
     <section class="challenges-section">
-      <h2 class="section-title">CHALLENGES</h2>
+      <h2 class="section-title power-title">CHALLENGES</h2>
       <div class="challenges-grid" id="challenges-grid">
         <!-- Rendered dynamically by app.js -->
         <div class="loading-placeholder">Loading Quest Log...</div>
