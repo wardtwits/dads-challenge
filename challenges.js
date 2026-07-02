@@ -42,7 +42,7 @@ const CHALLENGES = [
     title: "Math Escape Room",
     points: 20,
     icon: "🔢",
-    description: "Solve these 5 short puzzles to find the 5-digit 'lock code'. \n1) If a shirt and a hat cost $110 in total, and the shirt costs $100 more than the hat, how much does the hat cost? \n2) Complete the sequence: 2, 6, 12, 20, 30, ? \n3) I am a three-digit number. My tens digit is 5 more than my ones digit. My hundreds digit is 8 less than my tens digit. What number am I? \n4) Solve: 8 + 8 ÷ 8 + 8 × 8 - 8 = ? \n5) How many triangles are in a pentagram (5-pointed star)?"
+    description: "Solve these 4 short puzzles to find the 4-digit 'lock code'. \n1) If a shirt and a hat cost $110 in total, and the shirt costs $100 more than the hat, how much does the hat cost? \n2) Complete the sequence: 2, 6, 12, 20, 30, ? \n3) I am a three-digit number. My tens digit is 5 more than my ones digit. My hundreds digit is 8 less than my tens digit. What number am I? \n4) Solve: 8 + 8 ÷ 8 + 8 × 8 - 8 = ? \n5) How many triangles are in a pentagram (5-pointed star)?"
   },
   {
     id: "lego-bridge",
@@ -66,10 +66,10 @@ const CHALLENGES = [
     description: "Choose an existing board game or card game (like Uno, Monopoly, or Chess). Invent 3 new rules that completely change how the game is played. Play one round with your brother or Dad and explain how the new rules affected the strategy."
   },
   {
-    id: "hot-day-survival",
-    title: "Hot Day Survival Design",
+    id: "hidden-messages",
+    title: "Hidden",
     points: 15,
-    icon: "❄️",
-    description: "Design the 'ultimate cooling fort' using household materials (blankets, chairs, cardboard, fans, ice packs, etc.). Explain how you set up the airflow and why your design keeps the temperature inside lower than the rest of the room."
+    icon: "🕵️‍♂️",
+    description: "Find the hidden messages in this website! Find the #3 hidden messages that tell us what the earth elements are"
   }
 ];
