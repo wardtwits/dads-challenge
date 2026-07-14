@@ -242,6 +242,26 @@ h1, h2, h3, h4 {
   color: var(--accent-red);
 }
 
+.btn-share-code {
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 999px;
+  color: var(--accent-cyan);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 5px 9px;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.btn-share-code:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
 /* Button Styles */
 .btn {
   background: transparent;
@@ -873,6 +893,50 @@ h1, h2, h3, h4 {
   max-height: 400px;
   overflow-y: auto;
   padding-right: 5px;
+}
+
+.review-code-import {
+  background: rgba(34, 211, 238, 0.04);
+  border: 1px solid rgba(34, 211, 238, 0.14);
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+  padding: 16px;
+}
+
+.review-code-import h3 {
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.review-code-import p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.review-code-import textarea {
+  width: 100%;
+  min-height: 76px;
+  resize: vertical;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.review-code-import textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+.import-status {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
 }
 
 .no-submissions {

@@ -40,6 +40,112 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("board_completions", JSON.stringify(db.completions));
   }
 
+  const REVIEW_CODE_PREFIX = "DAD-REVIEW-V1:";
+
+  function encodeReviewPayload(payload) {
+    return REVIEW_CODE_PREFIX + btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+  }
+
+  function decodeReviewPayload(code) {
+    const trimmedCode = code.trim();
+    if (!trimmedCode) {
+      throw new Error("Paste a review code first.");
+    }
+
+    if (!trimmedCode.startsWith(REVIEW_CODE_PREFIX)) {
+      return JSON.parse(trimmedCode);
+    }
+
+    const encodedPayload = trimmedCode.slice(REVIEW_CODE_PREFIX.length);
+    return JSON.parse(decodeURIComponent(escape(atob(encodedPayload))));
+  }
+
+  function getCompletionsForUser(username) {
+    return Object.fromEntries(
+      Object.entries(db.completions).filter(([key]) => key.startsWith(`${username}_`))
+    );
+  }
+
+  function normalizeCompletionPayload(payload) {
+    const source = payload && payload.completions ? payload.completions : payload;
+
+    if (!source || typeof source !== "object" || Array.isArray(source)) {
+      throw new Error("Review data must be an object of submissions.");
+    }
+
+    const normalized = {};
+
+    Object.entries(source).forEach(([key, value]) => {
+      const separatorIndex = key.indexOf("_");
+      const username = key.slice(0, separatorIndex);
+      const challengeId = key.slice(separatorIndex + 1);
+
+      if (separatorIndex === -1 || !USERS[username] || !challengeId) return;
+      if (!value || typeof value.text !== "string" || !value.text.trim()) return;
+
+      normalized[key] = {
+        text: value.text.trim(),
+        timestamp: Number.isFinite(value.timestamp) ? value.timestamp : Date.now()
+      };
+    });
+
+    if (Object.keys(normalized).length === 0) {
+      throw new Error("No valid Pierce or Graham submissions were found.");
+    }
+
+    return normalized;
+  }
+
+  function createReviewCodeForUser(username) {
+    const completions = getCompletionsForUser(username);
+    const count = Object.keys(completions).length;
+
+    if (count === 0) {
+      throw new Error("Submit at least one challenge before sending a review code.");
+    }
+
+    return encodeReviewPayload({
+      version: 1,
+      exportedAt: Date.now(),
+      exportedBy: username,
+      completions
+    });
+  }
+
+  function importCompletionRecords(records) {
+    const normalizedRecords = normalizeCompletionPayload(records);
+    db.completions = {
+      ...db.completions,
+      ...normalizedRecords
+    };
+    saveDatabase();
+    updateUIState();
+    renderDadSubmissions();
+    return Object.keys(normalizedRecords).length;
+  }
+
+  function setTemporaryButtonText(button, text) {
+    const originalText = button.textContent;
+    button.textContent = text;
+    setTimeout(() => {
+      button.textContent = originalText;
+    }, 2500);
+  }
+
+  function setReviewCodeStatus(message, isError = false) {
+    const status = document.getElementById("review-code-status");
+    status.textContent = message;
+    status.style.color = isError ? "var(--accent-red)" : "var(--accent-green)";
+  }
+
+  async function copyTextToClipboard(text) {
+    if (!navigator.clipboard || !window.isSecureContext) {
+      throw new Error("Clipboard copy is only available on HTTPS or localhost.");
+    }
+
+    await navigator.clipboard.writeText(text);
+  }
+
   // --- CORE UTILITIES ---
   
   // Calculate scores based on challenges array
@@ -265,7 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isNewCompletion) {
       toastTitle.textContent = "QUEST COMPLETED! ✨";
-      toastMsg.textContent = "Points awarded to your character score!";
+      toastMsg.textContent = "Points awarded. Use Send to Dad when you're ready for review.";
       toast.style.borderColor = "var(--accent-green)";
       toast.querySelector(".toast-icon").textContent = "✨";
     } else {
@@ -352,6 +458,26 @@ document.addEventListener("DOMContentLoaded", () => {
     updateUIState();
   });
 
+  document.getElementById("btn-copy-dad-code").addEventListener("click", async () => {
+    if (!currentUser) return;
+
+    const button = document.getElementById("btn-copy-dad-code");
+    let reviewCode = "";
+
+    try {
+      reviewCode = createReviewCodeForUser(currentUser);
+      await copyTextToClipboard(reviewCode);
+      setTemporaryButtonText(button, "Copied!");
+    } catch (err) {
+      if (reviewCode) {
+        prompt("Copy this Dad review code and send it to Dad:", reviewCode);
+        setTemporaryButtonText(button, "Code Ready");
+      } else {
+        alert(err.message);
+      }
+    }
+  });
+
   // Trigger login modal buttons
   document.getElementById("btn-show-login").addEventListener("click", showLoginModal);
   document.getElementById("btn-close-login").addEventListener("click", closeLoginModal);
@@ -390,6 +516,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = tab.getAttribute("data-tab");
       document.getElementById(targetId).classList.add("active");
     });
+  });
+
+  document.getElementById("btn-import-review-code").addEventListener("click", () => {
+    const codeInput = document.getElementById("dad-review-code");
+
+    try {
+      const payload = decodeReviewPayload(codeInput.value);
+      const importedCount = importCompletionRecords(payload);
+      codeInput.value = "";
+      setReviewCodeStatus(`Imported ${importedCount} submission${importedCount === 1 ? "" : "s"}.`);
+    } catch (err) {
+      setReviewCodeStatus(err.message, true);
+    }
   });
 
   // Render submissions on Dad's viewer
@@ -516,17 +655,13 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.onload = (evt) => {
       try {
         const importedData = JSON.parse(evt.target.result);
-        
-        // Basic schema validation
-        if (typeof importedData === "object" && importedData !== null) {
-          db.completions = importedData;
-          saveDatabase();
-          updateUIState();
-          renderDadSubmissions();
-          alert("Database imported successfully!");
-        } else {
-          alert("Invalid file format. Import failed.");
-        }
+        const normalizedRecords = normalizeCompletionPayload(importedData);
+        db.completions = normalizedRecords;
+        saveDatabase();
+        updateUIState();
+        renderDadSubmissions();
+        const importedCount = Object.keys(normalizedRecords).length;
+        alert(`Database restored successfully. ${importedCount} submission${importedCount === 1 ? "" : "s"} loaded.`);
       } catch (err) {
         alert("Failed to parse JSON file: " + err.message);
       }
