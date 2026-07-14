@@ -36,6 +36,7 @@
           <span class="user-name" id="current-user-name">Player</span>
           <span class="user-score" id="current-user-score">0 PTS</span>
         </div>
+        <button class="btn-share-code" id="btn-copy-dad-code" type="button" title="Copy a review code to send Dad">Send to Dad</button>
         <button class="btn-logout" id="btn-logout" title="Log Out" aria-label="Log Out">✖</button>
       </div>
     </div>
@@ -183,6 +184,15 @@
 
         <!-- Submissions Tab -->
         <div class="tab-pane active" id="tab-submissions">
+          <div class="review-code-import">
+            <h3>Import Review Code</h3>
+            <p>When Pierce or Graham sends a review code, paste it here so Dad's dashboard can show their submissions on this device.</p>
+            <textarea id="dad-review-code" rows="3" placeholder="Paste Dad review code here..."></textarea>
+            <div class="form-actions">
+              <button class="btn btn-secondary" id="btn-import-review-code" type="button">Import Review Code</button>
+              <span class="import-status" id="review-code-status" aria-live="polite"></span>
+            </div>
+          </div>
           <div class="submissions-list" id="dad-submissions-container">
             <!-- Populated dynamically -->
             <p class="no-submissions">No submissions yet.</p>
