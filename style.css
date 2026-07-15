@@ -1241,6 +1241,7 @@ h1, h2, h3, h4 {
   color: white;
   font-weight: 900;
   animation: wiggle 1.4s ease-in-out infinite;
+  min-width: 200px;
 }
 
 @keyframes wiggle {
