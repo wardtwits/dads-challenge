@@ -28,15 +28,15 @@
 
   .math { border: 1px solid var(--accent-cyan) !important;}
   .art { border: 1px solid  var(--accent-pink) !important;}
-  .science { border: 1px solid  var(--accent-purple); !important;}
-  .history { border: 1px solid  var(--accent-orange); !important;}
-  .sports { border: 1px solid  var(--accent-green); !important;}
-  .coding { border: 1px solid  var(--accent-purple); !important;}
-  .music { border: 1px solid  var(--accent-cyan); !important;}
-  .gaming { border: 1px solid  var(--accent-purple); !important;}
-  .reading { border: 1px solid  var(--accent-orange); !important;}
-  .writing { border: 1px solid  var(--accent-pink); !important;}
-  .crypto { border: 1px solid var(--accent-purple); !important;}
+  .science { border: 1px solid  var(--accent-purple) !important;}
+  .history { border: 1px solid  var(--accent-orange) !important;}
+  .sports { border: 1px solid  var(--accent-green) !important;}
+  .coding { border: 1px solid  var(--accent-purple) !important;}
+  .music { border: 1px solid  var(--accent-cyan) !important;}
+  .gaming { border: 1px solid  var(--accent-purple) !important;}
+  .reading { border: 1px solid  var(--accent-orange) !important;}
+  .writing { border: 1px solid  var(--accent-pink) !important;}
+  .crypto { border: 1px solid var(--accent-purple) !important;}
   
   /* Fonts */
   --font-display: 'Orbitron', system-ui, -apple-system, sans-serif;
