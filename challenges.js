@@ -29,7 +29,7 @@ const CHALLENGES = [
     title: "Hallway Spy Laser Maze",
     points: 20,
     icon: "🕸️",
-    category: "sports",
+    category: "building",
     description: "Use yarn, painter's tape, string, or streamers to build a laser maze in a hallway or room. Crawl through without touching any laser. Time your run, then redesign the maze to make it harder for your brother. Submit your best time and one photo or sketch of the maze layout."
   },
   {
@@ -37,7 +37,7 @@ const CHALLENGES = [
     title: "Rube Goldberg Mini Machine",
     points: 25,
     icon: "⚙️",
-    category: "science",
+    category: "building",
     description: "Use household items (books, balls, dominos, toy cars, gravity) to knock over a plastic cup, ring a bell, or trigger a mechanism. The machine must have a minimum of 5 distinct steps. Film it or describe all the steps in your submission!"
   },
   {
@@ -53,7 +53,7 @@ const CHALLENGES = [
     title: "Lego / Block Bridge",
     points: 15,
     icon: "🌉",
-    category: "science",
+    category: "building",
     description: "Build a bridge between two chairs or large books spaced exactly 12 inches (30cm) apart. You can only use Lego bricks or standard toy blocks. Test how many coins or small toy cars it can support before collapsing!"
   },
   {
@@ -61,7 +61,7 @@ const CHALLENGES = [
     title: "Paper Aircraft Test Pilot",
     points: 20,
     icon: "✈️",
-    category: "science",
+    category: "building",
     description: "Design three different paper aircraft: distance, accuracy, and hang-time. Test each one with at least three flights in the same room or hallway. Submit the best distance, closest landing to a target, longest air time, and which design won overall."
   },
   {
@@ -69,7 +69,7 @@ const CHALLENGES = [
     title: "Board Game Boss Mode",
     points: 20,
     icon: "🎲",
-    category: "gaming",
+    category: "creative",
     description: "Choose an existing board game or card game and create one 'boss mode' rule set with 3 new rules, one power-up, and one penalty. Play at least 10 minutes. Submit the rules and explain which rule made the game more chaotic, strategic, or unfair."
   },
   {
@@ -77,7 +77,7 @@ const CHALLENGES = [
     title: "Random Creature Challenge",
     points: 20,
     icon: "🎲",
-    category: "art",
+    category: "creative",
     description: "Create a character using these random traits: Animal: Shark. Transportation: Skateboard. Job: Chef. Power: Invisibility. Mood: Grumpy. Draw it, build it, act it out, or write a short story/comic about it. Submit the creature's name and explain how all 5 traits show up!"
   },
   {
@@ -141,7 +141,7 @@ const CHALLENGES = [
     title: "Dragon Wanted Poster",
     points: 15,
     icon: "🐉",
-    category: "art",
+    category: "creative",
     description: "A dragon is causing trouble. Create a wanted poster that includes the dragon's name, picture, crimes committed, reward, last known location, and weaknesses. Submit the dragon's name and describe the best detail on your poster."
   },
   {
@@ -166,7 +166,7 @@ const CHALLENGES = [
     title: "Hidden",
     points: 15,
     icon: "🎙️",
-    category: "art",
+    category: "creative",
     description: "Create 8 movie sound effects using only household objects: footsteps, thunder, a monster growl, a door creak, a laser blast, a sword clash, rain, and an explosion. Submit the object used for each sound and which effect was most convincing."
   },
   {
@@ -174,7 +174,7 @@ const CHALLENGES = [
     title: "Domino Chain Reaction",
     points: 25,
     icon: "🧱",
-    category: "science",
+    category: "building",
     description: "Build a chain reaction with at least 25 pieces using dominoes, books, blocks, cards, or small toys. It must include one turn, one ramp, and one final target knockdown. Submit the number of pieces, how many attempts it took, and what failed first."
   },
   {
@@ -190,7 +190,7 @@ const CHALLENGES = [
     title: "No-Oven Snack Inventor",
     points: 20,
     icon: "🥨",
-    category: "science",
+    category: "creative",
     description: "Invent a no-oven snack using at least 4 ingredients already in the house. Give it a ridiculous product name, rate it on taste and weirdness, and write a one-sentence pitch. Clean up the kitchen to make the challenge count."
   }
 ];

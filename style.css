@@ -37,6 +37,8 @@
   .reading { border: 1px solid  var(--accent-orange) !important;}
   .writing { border: 1px solid  var(--accent-pink) !important;}
   .crypto { border: 1px solid var(--accent-purple) !important;}
+  .building { border: 1px solid var(--accent-green) !important;}
+  .creative { border: 1px solid var(--accent-pink) !important;}
   
   /* Fonts */
   --font-display: 'Orbitron', system-ui, -apple-system, sans-serif;
