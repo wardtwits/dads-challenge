@@ -121,11 +121,11 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-color);
+  /* background: rgba(255, 255, 255, 0.02); */
+  /* border: 1px solid var(--border-color); */
   padding: 6px 16px;
   border-radius: 30px;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  /* box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05); */
 }
 
 .leaderboard-title {
@@ -367,7 +367,7 @@ h1, h2, h3, h4 {
 .hero-header {
   position: relative;
   text-align: center;
-  padding: 80px 20px;
+  padding: 10px 20px;
   overflow: hidden;
 }
 
@@ -421,13 +421,6 @@ h1, h2, h3, h4 {
   transform: rotateY(180deg);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 50%;
-  margin: 0 auto;
-}
-
 .hero-title {
   font-size: 3rem;
   font-weight: 900;
@@ -442,6 +435,28 @@ h1, h2, h3, h4 {
   position: relative;
   animation: float 4s ease-in-out infinite;
 }
+
+@media only screen and (max-width: 480px) {
+  /* Your phone-specific CSS goes here */
+  .hero-content {
+    width: 95%;
+    white-space: normal;
+  }
+  .hero-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    margin: 0 auto;
+    white-space: nowrap;
+  }
+}
+
 
 .hero-subtitle {
   font-size: 1.1rem;
@@ -1272,24 +1287,19 @@ h1, h2, h3, h4 {
     gap: 15px;
     padding: 15px;
   }
-  
+}
   .nav-brand {
     order: 1;
   }
   
   .leaderboard-preview {
     order: 3;
-    width: 50%;
   }
   
   .auth-section {
     order: 2;
     width: 100%;
-    justify-content: center;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
+    justify-content: right;
   }
   
   .hero-header {
