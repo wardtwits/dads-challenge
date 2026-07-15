@@ -145,14 +145,34 @@ h1, h2, h3, h4 {
 
 .player-score-tag {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  padding: 2px 10px;
+  padding: 5px 12px;
   border-radius: 12px;
   transition: var(--transition-smooth);
+}
+
+.player-points,
+.player-total {
+  white-space: nowrap;
+}
+
+.player-total {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.leaderboard-reset-note {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  margin-bottom: 4px;
 }
 
 .pierce-tag {
