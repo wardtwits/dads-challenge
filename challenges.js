@@ -18,17 +18,17 @@ const CHALLENGES = [
   // },
   {
     id: "secret-code",
-    title: "Secret Code Message",
-    points: 10,
+    title: "Cipher Breaker Duel",
+    points: 25,
     icon: "🔐",
-    description: "Make a coded message using an encryption method of your choice (A1Z26, Caesar shift (+3), custom symbols, or your own invented cipher). Write down your cipher key and a short message. Give it to your brother—he has to decode it to prove it works!"
+    description: "Create a two-layer secret message for your brother to crack. Layer 1 must be a Caesar shift, Atbash, or A1Z26 code. Layer 2 must be a clue that tells him which cipher/key to use. Submit the encrypted message, the answer, and the clue. Bonus bragging rights if he needs more than 10 minutes."
   },
   {
-    id: "kitchen-measurement",
-    title: "Kitchen Measurement Puzzle",
-    points: 15,
-    icon: "🧪",
-    description: "Estimate first, then measure: 1 cup of cereal (exactly), 100g of a dry ingredient (like sugar or pasta), and exactly 1 liter of water. Write down your estimates and the actual numbers. The brother with the closest estimates wins!"
+    id: "spy-laser-maze",
+    title: "Hallway Spy Laser Maze",
+    points: 20,
+    icon: "🕸️",
+    description: "Use yarn, painter's tape, string, or streamers to build a laser maze in a hallway or room. Crawl through without touching any laser. Time your run, then redesign the maze to make it harder for your brother. Submit your best time and one photo or sketch of the maze layout."
   },
   {
     id: "rube-goldberg",
@@ -38,11 +38,11 @@ const CHALLENGES = [
     description: "Use household items (books, balls, dominos, toy cars, gravity) to knock over a plastic cup, ring a bell, or trigger a mechanism. The machine must have a minimum of 5 distinct steps. Film it or describe all the steps in your submission!"
   },
   {
-    id: "math-escape-room",
-    title: "Math Escape Room",
+    id: "kitchen-forensics",
+    title: "Kitchen Forensics Lab",
     points: 20,
-    icon: "🔢",
-    description: "Solve these 4 short puzzles to find the 4-digit 'lock code'. \n1) If a shirt and a hat cost $110 in total, and the shirt costs $100 more than the hat, how much does the hat cost? \n2) Complete the sequence: 2, 6, 12, 20, 30, ? \n3) I am a three-digit number. My tens digit is 5 more than my ones digit. My hundreds digit is 8 less than my tens digit. What number am I? \n4) Solve: 8 + 8 ÷ 8 + 8 × 8 - 8 = ? \n5) How many triangles are in a pentagram (5-pointed star)?"
+    icon: "🧪",
+    description: "Run three safe kitchen tests: build a floating/sinking prediction chart for 8 objects, separate a mystery mix like rice + paper clips + salt using household tools, and identify one powder by how it reacts with water or vinegar. Submit your predictions, results, and what surprised you."
   },
   {
     id: "lego-bridge",
@@ -52,18 +52,18 @@ const CHALLENGES = [
     description: "Build a bridge between two chairs or large books spaced exactly 12 inches (30cm) apart. You can only use Lego bricks or standard toy blocks. Test how many coins or small toy cars it can support before collapsing!"
   },
   {
-    id: "commercial-challenge",
-    title: "Commercial Challenge",
-    points: 15,
-    icon: "📺",
-    description: "Pick a random, boring household object (like a potato masher, a toilet paper roll, or a single sock). Perform a funny 30-second commercial to convince Dad and your brother to buy it for $1,000. Write down your catchphrase!"
+    id: "paper-aircraft-test-pilot",
+    title: "Paper Aircraft Test Pilot",
+    points: 20,
+    icon: "✈️",
+    description: "Design three different paper aircraft: distance, accuracy, and hang-time. Test each one with at least three flights in the same room or hallway. Submit the best distance, closest landing to a target, longest air time, and which design won overall."
   },
   {
-    id: "boardgame-remix",
-    title: "Board Game Remix",
+    id: "boardgame-boss-mode",
+    title: "Board Game Boss Mode",
     points: 20,
     icon: "🎲",
-    description: "Choose an existing board game or card game (like Uno, Monopoly, or Chess). Invent 3 new rules that completely change how the game is played. Play one round with your brother or Dad and explain how the new rules affected the strategy."
+    description: "Choose an existing board game or card game and create one 'boss mode' rule set with 3 new rules, one power-up, and one penalty. Play at least 10 minutes. Submit the rules and explain which rule made the game more chaotic, strategic, or unfair."
   },
   {
     id: "random-creature",
@@ -125,7 +125,28 @@ const CHALLENGES = [
     id: "hidden-messages",
     title: "Hidden",
     points: 15,
-    icon: "🕵️‍♂️",
-    description: "Find the hidden messages in this website! Find the #3 hidden messages that tell us what the earth elements are"
+    icon: "🎙️",
+    description: "Create 8 movie sound effects using only household objects: footsteps, thunder, a monster growl, a door creak, a laser blast, a sword clash, rain, and an explosion. Submit the object used for each sound and which effect was most convincing."
+  },
+  {
+    id: "domino-chain-reaction",
+    title: "Domino Chain Reaction",
+    points: 25,
+    icon: "🧱",
+    description: "Build a chain reaction with at least 25 pieces using dominoes, books, blocks, cards, or small toys. It must include one turn, one ramp, and one final target knockdown. Submit the number of pieces, how many attempts it took, and what failed first."
+  },
+  {
+    id: "memory-palace",
+    title: "Memory Palace Sprint",
+    points: 15,
+    icon: "🧠",
+    description: "Ask someone to write a list of 20 random objects. Study it for 2 minutes, wait 5 minutes, then recite as many as you can in order. Submit your score and the memory trick you used. Add 5 bonus objects if you want a harder run."
+  },
+  {
+    id: "no-oven-snack-inventor",
+    title: "No-Oven Snack Inventor",
+    points: 20,
+    icon: "🥨",
+    description: "Invent a no-oven snack using at least 4 ingredients already in the house. Give it a ridiculous product name, rate it on taste and weirdness, and write a one-sentence pitch. Clean up the kitchen to make the challenge count."
   }
 ];
