@@ -122,6 +122,20 @@ const CHALLENGES = [
     description: "You have 36 cubes and want to build the tallest possible tower. Every level must be a square. The bottom can be any size. Each higher level must be smaller than the one below it. What is the tallest tower you can build? Draw it and submit your level sizes."
   },
   {
+    id: "dragon-wanted-poster",
+    title: "Dragon Wanted Poster",
+    points: 15,
+    icon: "🐉",
+    description: "A dragon is causing trouble. Create a wanted poster that includes the dragon's name, picture, crimes committed, reward, last known location, and weaknesses. Submit the dragon's name and describe the best detail on your poster."
+  },
+  {
+    id: "bring-a-memory-to-life",
+    title: "Bring a Memory to Life",
+    points: 100,
+    icon: "✍️",
+    description: "Choose one real family memory that means something to you. Imagine you are writing to someone who has never met you or your family, and describe it so well that the reader feels like they were actually there. Include the people who were part of the memory: what they looked like, about how old they were, their personalities, habits or funny quirks, and how they acted during the memory. Be honest, but kind, and do not include anything that would hurt someone's feelings."
+  },
+  {
     id: "hidden-messages",
     title: "Hidden",
     points: 15,
