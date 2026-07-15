@@ -136,6 +136,14 @@ const CHALLENGES = [
     description: "Choose one real family memory that means something to you. Imagine you are writing to someone who has never met you or your family, and describe it so well that the reader feels like they were actually there. Include the people who were part of the memory: what they looked like, about how old they were, their personalities, habits or funny quirks, and how they acted during the memory. Be honest, but kind, and do not include anything that would hurt someone's feelings."
   },
   {
+    id: "lost-cartoon-vault",
+    title: "Super Bonus: Lost Cartoon Vault",
+    points: 150,
+    icon: "🗝️",
+    description: "Complete a printable 60-120 minute secret-agent puzzle mission with 11 connected puzzles. Each solved puzzle reveals one letter needed for the final vault phrase. Open the printable mission, solve every page, and submit the final phrase plus one puzzle that was the hardest.",
+    printUrl: "lost-cartoon-vault.html"
+  },
+  {
     id: "hidden-messages",
     title: "Hidden",
     points: 15,

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost Cartoon Vault - Printable Mission</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #4b5563;
+      --line: #cbd5e1;
+      --panel: #f8fafc;
+      --accent: #2563eb;
+      --danger: #b91c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #e5e7eb;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    section {
+      background: white;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 18px;
+      padding: 22px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 10px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--line);
+      font-size: 1.35rem;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 8px 22px;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 12px 0;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background: var(--panel);
+    }
+
+    .mission-header {
+      background: linear-gradient(135deg, #dbeafe, #fff);
+      border-color: var(--accent);
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .agent-box,
+    .work-box,
+    .final-box {
+      border: 2px dashed var(--line);
+      border-radius: 8px;
+      margin-top: 12px;
+      padding: 12px;
+    }
+
+    .agent-box {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .letter-slot {
+      border-bottom: 3px solid var(--ink);
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 700;
+      min-width: 54px;
+      text-align: center;
+    }
+
+    .work-lines {
+      min-height: 72px;
+    }
+
+    .code {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-family: "Courier New", monospace;
+      font-size: 1.05rem;
+      padding: 10px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(5, 1fr);
+      margin: 12px 0;
+      max-width: 360px;
+    }
+
+    .grid span {
+      border: 1px solid var(--line);
+      padding: 8px;
+      text-align: center;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .parent-only {
+      border-color: var(--danger);
+    }
+
+    .parent-only h2 {
+      color: var(--danger);
+    }
+
+    .congrats {
+      background: #ecfdf5;
+      border-color: #059669;
+      text-align: center;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      main {
+        max-width: none;
+        padding: 0;
+      }
+
+      section {
+        border-radius: 0;
+        margin-bottom: 12px;
+      }
+
+      .page-break {
+        break-before: page;
+        page-break-before: always;
+      }
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding: 12px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="mission-header">
+      <p class="label">Secret Agent Mission</p>
+      <h1>The Lost Cartoon Vault</h1>
+      <p>The Cartoon Vault has locked itself. Inside is the name of a missing show. To open it, solve each puzzle and write the Agent Letter from every puzzle into the final vault strip.</p>
+      <p>Do the puzzles in order. Each one gives you a letter for the final reveal and points you to the next puzzle.</p>
+    </section>
+
+    <section>
+      <h2>Materials Needed</h2>
+      <ul>
+        <li>Pencil and eraser</li>
+        <li>Scratch paper</li>
+        <li>Colored pencil or marker for crossing things out</li>
+        <li>Optional: scissors to cut out the final vault strip</li>
+      </ul>
+      <p><strong>Mission time:</strong> about 60-120 minutes.</p>
+    </section>
+
+    <section>
+      <h2>Puzzle 1: The Door Number</h2>
+      <p>The first vault door has four number locks. Solve them, then add the four answers together.</p>
+      <table>
+        <tr><th>Lock</th><th>Problem</th><th>Answer</th></tr>
+        <tr><td>A</td><td>36 / 6</td><td></td></tr>
+        <tr><td>B</td><td>9 + 4</td><td></td></tr>
+        <tr><td>C</td><td>21 - 14</td><td></td></tr>
+        <tr><td>D</td><td>8 x 2</td><td></td></tr>
+      </table>
+      <p>Now subtract 24 from your total. Use A=1, B=2, C=3 to turn that number into your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 1</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Work space:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 2: The Guard Lineup</h2>
+      <p>Four robot guards stand in a row: Atlas, Blink, Echo, and Nova.</p>
+      <ul>
+        <li>Echo is not first or last.</li>
+        <li>Atlas is immediately before Blink.</li>
+        <li>Nova is somewhere after Echo.</li>
+      </ul>
+      <p>Find the only possible order. Your Agent Letter is the first letter of the robot in spot 1.</p>
+      <div class="agent-box"><span>Agent Letter 2</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Order:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 3: Signal Pattern</h2>
+      <p>The vault flashes this number pattern:</p>
+      <p class="code">2, 4, 7, 11, 16, 22, ___</p>
+      <p>Find the next number. Then subtract 22. Use A=1, B=2, C=3 to turn the result into your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 3</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Work space:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 4: Number Badge</h2>
+      <p>The badge scanner only understands numbers. Decode this with A=1, B=2, C=3.</p>
+      <p class="code">21</p>
+      <p>Write the decoded letter as your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 4</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Work space:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 5: Caesar Hallway</h2>
+      <p>A message is painted on the hallway wall. Each letter was shifted forward 3 places. Shift each letter back 3 places to read it.</p>
+      <p class="code">OHWWHU</p>
+      <p>Take the first letter of the decoded word as your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 5</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Work space:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 6: Coordinate Map</h2>
+      <p>Use the grid. The first number is the row. The second number is the column.</p>
+      <div class="grid">
+        <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+        <span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+        <span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+        <span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+        <span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+      </div>
+      <p>Coordinates: <strong>1,1</strong></p>
+      <p>Write that grid letter as your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 6</span><span class="letter-slot"></span></div>
+    </section>
+
+    <section>
+      <h2>Puzzle 7: Scrambled Control Word</h2>
+      <p>Unscramble this control word:</p>
+      <p class="code">DARRA</p>
+      <p>Take the first letter of the unscrambled word as your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 7</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Unscrambled word:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 8: Shape Switches</h2>
+      <p>The shape switches follow a pattern. Fill in the missing shape.</p>
+      <p class="code">Square, Circle, Triangle, Square, Circle, Triangle, ___</p>
+      <p>Your Agent Letter is the first letter of the missing shape.</p>
+      <div class="agent-box"><span>Agent Letter 8</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Missing shape:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 9: Hidden Message Memo</h2>
+      <p>Read the first letter of each line in this memo.</p>
+      <div class="code">
+        Hurry to the projector room.<br>
+        Open the silver case.<br>
+        Watch for the blinking light.
+      </div>
+      <p>Take the first letter of the hidden word as your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 9</span><span class="letter-slot"></span></div>
+    </section>
+
+    <section>
+      <h2>Puzzle 10: The Odd One Out</h2>
+      <p>Circle the word that does not belong.</p>
+      <p class="code">north, east, orange, south, west</p>
+      <p>Your Agent Letter is the first letter of the odd word.</p>
+      <div class="agent-box"><span>Agent Letter 10</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Odd word:</div>
+    </section>
+
+    <section>
+      <h2>Puzzle 11: Elimination Panel</h2>
+      <p>The final panel shows five letters. Cross out every letter that appears in the word <strong>VAULT</strong>.</p>
+      <p class="code">W A V L T</p>
+      <p>The letter left over is your Agent Letter.</p>
+      <div class="agent-box"><span>Agent Letter 11</span><span class="letter-slot"></span></div>
+      <div class="work-box work-lines">Work space:</div>
+    </section>
+
+    <section>
+      <h2>Final Puzzle: Open the Vault</h2>
+      <p>Copy your 11 Agent Letters in order. A space has already been placed after letter 7.</p>
+      <div class="final-box">
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        &nbsp;&nbsp;
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+        <span class="letter-slot"></span>
+      </div>
+      <p>Write the final phrase on the dashboard to complete the mission.</p>
+    </section>
+
+    <section class="congrats">
+      <h2>Congratulations, Agent</h2>
+      <p>You opened the Lost Cartoon Vault. Report your final phrase to Dad and tell him which puzzle made you think the hardest.</p>
+    </section>
+
+    <section class="parent-only page-break">
+      <h2>Parent Hint Cards</h2>
+      <ol>
+        <li>Add all four answers first. Then subtract 24.</li>
+        <li>Try placing Echo in each middle spot, then check Nova.</li>
+        <li>Look at how much the numbers increase each time.</li>
+        <li>Use the alphabet number chart.</li>
+        <li>Move each coded letter 3 letters backward in the alphabet.</li>
+        <li>Find row 1 first, then column 1.</li>
+        <li>The word means information or numbers.</li>
+        <li>The pattern repeats every three shapes.</li>
+        <li>Use the first letter of each line.</li>
+        <li>Four words are directions.</li>
+        <li>Cross out A, V, L, and T because they are in VAULT.</li>
+      </ol>
+    </section>
+
+    <section class="parent-only">
+      <h2>Complete Answer Key for Parents</h2>
+      <ol>
+        <li>36 / 6 = 6, 9 + 4 = 13, 21 - 14 = 7, 8 x 2 = 16. Total 42. 42 - 24 = 18. A1Z26 gives R.</li>
+        <li>The only order is Echo, Nova, Atlas, Blink. Spot 1 is Echo, so the letter is E.</li>
+        <li>The increases are +2, +3, +4, +5, +6, so the next number is 29. 29 - 22 = 7. A1Z26 gives G.</li>
+        <li>21 = U.</li>
+        <li>OHWWHU shifted back 3 becomes LETTER. The first letter is L.</li>
+        <li>Coordinate 1,1 is A.</li>
+        <li>DARRA unscrambles to RADAR. The first letter is R.</li>
+        <li>The missing shape is Square, so the letter is S.</li>
+        <li>The first letters spell HOW. Use the first letter of the hidden word for H.</li>
+        <li>Orange is not a direction, so the letter is O.</li>
+        <li>Crossing out letters from VAULT leaves W.</li>
+      </ol>
+      <p><strong>Final phrase:</strong> REGULAR SHOW</p>
+    </section>
+  </main>
+</body>
+</html>

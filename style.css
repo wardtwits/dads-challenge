@@ -523,6 +523,8 @@ h1, h2, h3, h4 {
 
 .challenge-card.completed {
   border-color: rgba(16, 185, 129, 0.3);
+  opacity: 0.52;
+  filter: grayscale(0.35);
 }
 
 .challenge-card.completed::before {
@@ -531,7 +533,9 @@ h1, h2, h3, h4 {
 
 .challenge-card.completed:hover {
   border-color: var(--accent-green);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-green-glow);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.12);
+  opacity: 0.68;
+  transform: none;
 }
 
 /* Card Header Components */
@@ -815,6 +819,24 @@ h1, h2, h3, h4 {
 
 #detail-challenge-description {
   white-space: pre-wrap;
+}
+
+.printable-challenge-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  color: var(--accent-cyan);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.printable-challenge-link:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--accent-cyan-glow);
 }
 
 /* Lock Warning inside Modal */

@@ -494,6 +494,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("detail-challenge-points").textContent = `${challenge.points} PTS`;
     document.getElementById("detail-challenge-description").textContent = challenge.description;
 
+    const descriptionCard = document.querySelector(".challenge-desc-card");
+    const existingPrintableLink = descriptionCard.querySelector(".printable-challenge-link");
+    if (existingPrintableLink) {
+      existingPrintableLink.remove();
+    }
+
+    if (challenge.printUrl) {
+      const printableLink = document.createElement("a");
+      printableLink.className = "printable-challenge-link";
+      printableLink.href = challenge.printUrl;
+      printableLink.target = "_blank";
+      printableLink.rel = "noopener";
+      printableLink.textContent = "Open printable mission";
+      descriptionCard.appendChild(printableLink);
+    }
+
     const lockWarning = document.getElementById("lock-warning");
     const submissionForm = document.getElementById("submission-form");
     const completedBadge = document.getElementById("completed-badge");
