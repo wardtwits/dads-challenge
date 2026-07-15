@@ -539,7 +539,7 @@ h1, h2, h3, h4 {
 .challenge-card.completed {
   border-color: rgba(16, 185, 129, 0.3);
   opacity: 0.52;
-  filter: grayscale(0.35);
+  filter: sepia(1);
 }
 
 .challenge-card.completed::before {
