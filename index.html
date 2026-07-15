@@ -48,16 +48,19 @@
     <div class="hero-content">
       <h1 class="hero-title" data-text="DAD'S CHALLENGE BOARD">DAD'S CHALLENGE BOARD</h1>
     <div class="leaderboard-preview" id="global-leaderboard" aria-label="Current Scores">
-      <div class="leaderboard-title">LEADERBOARD</div>
+      <div class="leaderboard-title">WEEKLY LEADERBOARD</div>
+      <div class="leaderboard-reset-note">Resets Fridays at 8 PM ET</div>
       <div class="scores-container ">
         <div class="player-score-tag pierce-tag" id="leaderboard-pierce">
           <span class="player-name">Pierce</span>
           <span class="player-points" id="lb-pts-pierce">0 PTS</span>
+          <span class="player-total" id="lb-total-pierce">TOTAL 0 PTS</span>
         </div>
         <div class="score-vs">VS</div>
         <div class="player-score-tag graham-tag" id="leaderboard-graham">
           <span class="player-name">Graham</span>
           <span class="player-points" id="lb-pts-graham">0 PTS</span>
+          <span class="player-total" id="lb-total-graham">TOTAL 50 PTS</span>
         </div>
       </div>
     </div>
@@ -203,13 +206,13 @@
         <div class="tab-pane" id="tab-settings">
           <div class="danger-zone">
             <h3>Danger Zone</h3>
-            <p>Warning: Resets cannot be undone. Be careful!</p>
+            <p>Warning: These reset this week's leaderboard progress. Archived totals stay saved.</p>
             <div class="btn-group">
-              <button class="btn btn-danger" id="btn-reset-pierce">Reset Pierce's Progress</button>
-              <button class="btn btn-danger" id="btn-reset-graham">Reset Graham's Progress</button>
+              <button class="btn btn-danger" id="btn-reset-pierce">Reset Pierce This Week</button>
+              <button class="btn btn-danger" id="btn-reset-graham">Reset Graham This Week</button>
             </div>
             <div class="btn-group" style="margin-top: 15px;">
-              <button class="btn btn-danger btn-block" id="btn-reset-all">Reset All Progress (Both Players)</button>
+              <button class="btn btn-danger btn-block" id="btn-reset-all">Reset This Week (Both Players)</button>
             </div>
           </div>
 
@@ -252,6 +255,7 @@
 
   <!-- Scripts -->
   <script src="challenges.js"></script>
+  <script src="score-history.js"></script>
   <script src="app.js"></script>
   <!-- Reflect on this idea: edoc terces 3# <- dniw -->
 </body>
