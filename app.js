@@ -427,6 +427,10 @@ document.addEventListener("DOMContentLoaded", () => {
     CHALLENGES.forEach(challenge => {
       const card = document.createElement("article");
       card.className = "challenge-card";
+      if (challenge.category) {
+        card.classList.add(challenge.category);
+        card.dataset.category = challenge.category;
+      }
       card.setAttribute("tabindex", "0");
       card.setAttribute("aria-label", `Challenge: ${challenge.title}. Value ${challenge.points} points.`);
 
