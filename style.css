@@ -26,17 +26,17 @@
   --accent-green-glow: rgba(16, 185, 129, 0.3);
   --accent-red: #ef4444;
 
-  .math { color: var(--accent-cyan);}
-  .art { color: var(--accent-pink);
-  .science { color: var(--accent-purple);}
-  .history { color: var(--accent-orange);}
-  .sports { color: var(--accent-green);}
-  .coding { color: var(--accent-purple);}
-  .music { color: var(--accent-cyan);}
-  .gaming { color: var(--accent-purple);}
-  .reading { color: var(--accent-orange);}
-  .writing { color: var(--accent-pink);}
-  .crypto { color: var(--accent-purple);}
+  .math { border: 1px solid var(--accent-cyan);}
+  .art { border: 1px solid  var(--accent-pink);
+  .science { border: 1px solid  var(--accent-purple);}
+  .history { border: 1px solid  var(--accent-orange);}
+  .sports { border: 1px solid  var(--accent-green);}
+  .coding { border: 1px solid  var(--accent-purple);}
+  .music { border: 1px solid  var(--accent-cyan);}
+  .gaming { border: 1px solid  var(--accent-purple);}
+  .reading { border: 1px solid  var(--accent-orange);}
+  .writing { border: 1px solid  var(--accent-pink);}
+  .crypto { border: 1px solid var(--accent-purple);}
   
   /* Fonts */
   --font-display: 'Orbitron', system-ui, -apple-system, sans-serif;
