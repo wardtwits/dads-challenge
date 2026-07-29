@@ -10,5 +10,14 @@ window.INITIAL_SCORE_HISTORY = [
       pierce: 0,
       graham: 50
     }
+  },
+    {
+    id: "week-ending-2026-07-24",
+    label: "Week ending Jul 24, 2026",
+    endedAt: "2026-07-10T20:00:00-04:00",
+    scores: {
+      pierce: 100,
+      graham: 550
+    }
   }
 ];
