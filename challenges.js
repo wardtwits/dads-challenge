@@ -2,195 +2,132 @@
 // Easy to add/remove challenges! Just modify the array below.
 
 const CHALLENGES = [
-  // {
-  //   id: "scavenger-hunt",
-  //   title: "Indoor Scavenger Hunt",
-  //   points: 10,
-  //   icon: "🔍",
-  //   description: "Find 10 things around the house: something magnetic, something older than you, something with a serial number, something that floats, something that is exactly 12 inches long, something translucent, a leaf from outside, a coin from before 2010, something that plugs in but has no screen, and a blue button/peg."
-  // },
-  // {
-  //   id: "paper-tower",
-  //   title: "Build a Paper Tower",
-  //   points: 15,
-  //   icon: "🗼",
-  //   description: "Build the tallest tower you can using only 5 sheets of standard paper and 1 meter of tape. No external supports allowed. It must stand on its own for at least 10 seconds. Measure the height and write it down!"
-  // },
   {
-    id: "secret-code",
-    title: "Cipher Breaker Duel",
-    points: 25,
-    icon: "🔐",
-    category: "crypto",
-    description: "Create a two-layer secret message for your brother to crack. Layer 1 must be a Caesar shift, Atbash, or A1Z26 code. Layer 2 must be a clue that tells him which cipher/key to use. Submit the encrypted message, the answer, and the clue. Bonus bragging rights if he needs more than 10 minutes."
-  },
-  {
-    id: "spy-laser-maze",
-    title: "Hallway Spy Laser Maze",
-    points: 20,
-    icon: "🕸️",
-    category: "building",
-    description: "Use yarn, painter's tape, string, or streamers to build a laser maze in a hallway or room. Crawl through without touching any laser. Time your run, then redesign the maze to make it harder for your brother. Submit your best time and one photo or sketch of the maze layout."
-  },
-  {
-    id: "rube-goldberg",
-    title: "Rube Goldberg Mini Machine",
-    points: 25,
-    icon: "⚙️",
-    category: "building",
-    description: "Use household items (books, balls, dominos, toy cars, gravity) to knock over a plastic cup, ring a bell, or trigger a mechanism. The machine must have a minimum of 5 distinct steps. Film it or describe all the steps in your submission!"
-  },
-  {
-    id: "kitchen-forensics",
-    title: "Kitchen Forensics Lab",
-    points: 20,
-    icon: "🧪",
-    category: "science",
-    description: "Run three safe kitchen tests: build a floating/sinking prediction chart for 8 objects, separate a mystery mix like rice + paper clips + salt using household tools, and identify one powder by how it reacts with water or vinegar. Submit your predictions, results, and what surprised you."
-  },
-  {
-    id: "lego-bridge",
-    title: "Lego / Block Bridge",
-    points: 15,
-    icon: "🌉",
-    category: "building",
-    description: "Build a bridge between two chairs or large books spaced exactly 12 inches (30cm) apart. You can only use Lego bricks or standard toy blocks. Test how many coins or small toy cars it can support before collapsing!"
-  },
-  {
-    id: "paper-aircraft-test-pilot",
-    title: "Paper Aircraft Test Pilot",
-    points: 20,
-    icon: "✈️",
-    category: "building",
-    description: "Design three different paper aircraft: distance, accuracy, and hang-time. Test each one with at least three flights in the same room or hallway. Submit the best distance, closest landing to a target, longest air time, and which design won overall."
-  },
-  {
-    id: "boardgame-boss-mode",
-    title: "Board Game Boss Mode",
-    points: 20,
-    icon: "🎲",
-    category: "creative",
-    description: "Choose an existing board game or card game and create one 'boss mode' rule set with 3 new rules, one power-up, and one penalty. Play at least 10 minutes. Submit the rules and explain which rule made the game more chaotic, strategic, or unfair."
-  },
-  {
-    id: "random-creature",
-    title: "Random Creature Challenge",
-    points: 20,
-    icon: "🎲",
-    category: "creative",
-    description: "Create a character using these random traits: Animal: Shark. Transportation: Skateboard. Job: Chef. Power: Invisibility. Mood: Grumpy. Draw it, build it, act it out, or write a short story/comic about it. Submit the creature's name and explain how all 5 traits show up!"
-  },
-  {
-    id: "three-style-drawing",
-    title: "Three Style Drawing",
-    points: 15,
-    icon: "🎨",
+    id: "album-cover-remix",
+    title: "Album Cover Remix",
+    points: 40,
+    icon: "🎧",
     category: "art",
-    description: "Pick something simple, like a bike, tree, or dog. Draw it three different ways: realistic, cartoon, and video game style. Submit what object you picked and describe one detail that makes each version match its style."
+    description: "Pick a favorite song and design a brand-new album cover for it. Include the song title, artist name, and at least 3 visual clues that match the mood or lyrics. Submit the drawing and explain the 3 clues."
   },
   {
-    id: "code-a-decoder",
-    title: "Code a Decoder",
-    points: 25,
-    icon: "🕵️",
-    category: "coding",
-    description: "Build a program that can encode a message by shifting each letter with a Caesar cipher, decode a message, ignore punctuation, and let the user choose the shift amount. Bonus: make it crack a message when the shift is unknown by trying all 26 possibilities."
+    id: "math-treasure-map",
+    title: "Math Treasure Map",
+    points: 35,
+    icon: "🗺️",
+    category: "math",
+    description: "Create a treasure map where each step is unlocked by solving a math problem. Include at least 6 stops using addition, subtraction, multiplication, division, fractions, or patterns. Submit the map and answer key."
   },
   {
-    id: "conways-game-of-life",
-    title: "Conway's Game of Life",
+    id: "household-beat-lab",
+    title: "Household Beat Lab",
     points: 30,
-    icon: "🟩",
-    category: "coding",
-    description: "Create a program that simulates a world made of tiny square cells. Each cell is either alive or dead. For every cell, count its 8 neighbors: up, down, left, right, and the four diagonals. Then apply these rules to every cell at the same time: 1) A live cell with fewer than 2 live neighbors dies. 2) A live cell with 2 or 3 live neighbors stays alive. 3) A live cell with more than 3 live neighbors dies. 4) A dead cell with exactly 3 live neighbors becomes alive."
-  },
-  {
-    id: "one-hundred-lockers",
-    title: "The 100 Lockers",
-    points: 20,
-    icon: "🔐",
-    category: "math",
-    description: "There are 100 closed lockers. A student walks by and opens every locker. A second student changes every 2nd locker, open to closed or closed to open. A third changes every 3rd locker. A fourth changes every 4th locker. Continue until the 100th student changes only locker 100. Which lockers are open at the end? Bonus: explain why those lockers stay open."
-  },
-  {
-    id: "river-crossing",
-    title: "River Crossing",
-    points: 15,
-    icon: "🚣",
-    category: "math",
-    description: "A farmer needs to cross a river with a wolf, a goat, and a cabbage. The boat only holds the farmer and one item. If left alone, the wolf eats the goat, and the goat eats the cabbage. How can the farmer get everything across safely? Submit the exact trip order."
-  },
-  {
-    id: "fibonacci-golden-ratio",
-    title: "Fibonacci & the Golden Ratio",
-    points: 20,
-    icon: "🌀",
-    category: "math",
-    description: "Investigate one of the most famous patterns in mathematics. Step 1: write down the first 15 Fibonacci numbers. The sequence starts with 1, 1, and every number after that is the sum of the previous two numbers. Step 2: divide each Fibonacci number by the one before it, like 2 ÷ 1 = 2.000, 3 ÷ 2 = 1.500, 5 ÷ 3 = 1.667, and 8 ÷ 5 = 1.600. Continue until you have calculated all the ratios. What number do your answers seem to be approaching?"
-  },
-  {
-    id: "cube-tower",
-    title: "Cube Tower",
-    points: 20,
-    icon: "🧊",
-    category: "math",
-    description: "You have 36 cubes and want to build the tallest possible tower. Every level must be a square. The bottom can be any size. Each higher level must be smaller than the one below it. What is the tallest tower you can build? Draw it and submit your level sizes."
-  },
-  {
-    id: "dragon-wanted-poster",
-    title: "Dragon Wanted Poster",
-    points: 15,
-    icon: "🐉",
+    icon: "🥁",
     category: "creative",
-    description: "A dragon is causing trouble. Create a wanted poster that includes the dragon's name, picture, crimes committed, reward, last known location, and weaknesses. Submit the dragon's name and describe the best detail on your poster."
+    description: "Make a 30-second rhythm track using only household objects like cups, pencils, boxes, tables, or cans. Use at least 4 different sounds. Submit the object list and either perform it or describe the beat pattern."
   },
   {
-    id: "bring-a-memory-to-life",
-    title: "Bring a Memory to Life",
-    points: 100,
-    icon: "✍️",
-    category: "writing",
-    description: "Choose one real family memory that means something to you. Imagine you are writing to someone who has never met you or your family, and describe it so well that the reader feels like they were actually there. Include the people who were part of the memory: what they looked like, about how old they were, their personalities, habits or funny quirks, and how they acted during the memory. Be honest, but kind, and do not include anything that would hurt someone's feelings."
-  },
-  {
-    id: "lost-cartoon-vault",
-    title: "Super Bonus: Lost Cartoon Vault",
-    points: 150,
-    icon: "🗝️",
-    category: "crypto",
-    description: "Complete a printable 60-120 minute secret-agent puzzle mission with 11 connected puzzles. Each solved puzzle reveals one letter needed for the final vault phrase. Open the printable mission, solve every page, and submit the final phrase plus one puzzle that was the hardest.",
-    printUrl: "lost-cartoon-vault.html"
-  },
-  {
-    id: "hidden-messages",
-    title: "Hidden",
-    points: 15,
-    icon: "🎙️",
-    category: "creative",
-    description: "Create 8 movie sound effects using only household objects: footsteps, thunder, a monster growl, a door creak, a laser blast, a sword clash, rain, and an explosion. Submit the object used for each sound and which effect was most convincing."
-  },
-  {
-    id: "domino-chain-reaction",
-    title: "Domino Chain Reaction",
+    id: "symmetry-monster",
+    title: "Symmetry Creature",
     points: 25,
-    icon: "🧱",
+    icon: "🪞",
+    category: "art",
+    description: "Draw half of a creature on one side of a page, then mirror it on the other side as closely as possible. Add color patterns that repeat symmetrically. Submit the finished creature and name it."
+  },
+  {
+    id: "tablet-minecraft-music-stage",
+    title: "Minecraft Music Stage",
+    points: 60,
+    icon: "🎤",
     category: "building",
-    description: "Build a chain reaction with at least 25 pieces using dominoes, books, blocks, cards, or small toys. It must include one turn, one ramp, and one final target knockdown. Submit the number of pieces, how many attempts it took, and what failed first."
+    description: "Build a small concert stage in Minecraft on tablet. It must include a stage, lights, audience area, backstage area, and at least one pretend instrument made from blocks. Submit screenshots or a sketch of the build."
   },
   {
-    id: "memory-palace",
-    title: "Memory Palace Sprint",
-    points: 15,
-    icon: "🧠",
-    category: "reading",
-    description: "Ask someone to write a list of 20 random objects. Study it for 2 minutes, wait 5 minutes, then recite as many as you can in order. Submit your score and the memory trick you used. Add 5 bonus objects if you want a harder run."
+    id: "shape-secret-code",
+    title: "Shape Secret Code",
+    points: 35,
+    icon: "🔺",
+    category: "crypto",
+    description: "Invent a code where shapes, symbols, or colors stand for letters. Write a secret message of at least 10 words and include a key so someone else can decode it. Bonus: add one fake symbol to confuse them."
   },
   {
-    id: "no-oven-snack-inventor",
-    title: "No-Oven Snack Inventor",
-    points: 20,
-    icon: "🥨",
+    id: "time-travel-rules",
+    title: "Time Travel Ruleset",
+    points: 45,
+    icon: "⏳",
+    category: "writing",
+    description: "Create the rules for a time-travel universe. Include 5 rules, 1 paradox, and what happens if someone breaks the rules. Submit the rules and a short example story showing the paradox."
+  },
+  {
+    id: "prime-number-lock",
+    title: "Prime Number Lock",
+    points: 40,
+    icon: "🔢",
+    category: "math",
+    description: "Design a puzzle lock where the final code is created from prime numbers, factors, or multiples. It must have at least 4 clues and one final 3- or 4-digit answer. Submit the puzzle and solution."
+  },
+  {
+    id: "binary-secret-message",
+    title: "Binary Secret Message",
+    points: 45,
+    icon: "💾",
+    category: "crypto",
+    description: "Write a short message and encode it using binary ASCII. Then decode it back to prove it works. Submit the original message, binary version, and decoded version."
+  },
+  {
+    id: "pc-minecraft-time-machine",
+    title: "Minecraft Time Machine Room",
+    points: 75,
+    icon: "🌀",
+    category: "building",
+    description: "Build a time-machine room in Minecraft on PC. It must include a power source, control panel, portal or chamber, warning sign, and one hidden clue about what year it travels to. Submit screenshots."
+  },
+  {
+    id: "mini-logic-grid",
+    title: "Mini Logic Mystery",
+    points: 60,
+    icon: "🧩",
+    category: "math",
+    description: "Create a small logic puzzle with 3 people, 3 objects, and 3 locations or times. Write at least 5 clues so someone can solve who matches with what. Submit the puzzle, grid, and answer."
+  },
+  {
+    id: "cipher-field-manual",
+    title: "Cipher Field Manual",
+    points: 90,
+    icon: "📓",
+    category: "crypto",
+    description: "Make a mini field manual explaining 3 secret codes, such as Caesar shift, Atbash, Pigpen, Morse, A1Z26, or binary. Include one example message for each code and one challenge message for someone else to solve."
+  },
+  {
+    id: "cardboard-puzzle-box",
+    title: "Cardboard Puzzle Box",
+    points: 90,
+    icon: "📦",
+    category: "building",
+    description: "Build a small puzzle box, envelope, or container from cardboard or paper. It must require at least 3 clues or steps before it can be opened. Submit photos or drawings and explain the solution."
+  },
+  {
+    id: "one-room-escape-puzzle",
+    title: "One-Room Escape Puzzle",
+    points: 150,
+    icon: "🚪",
+    category: "crypto",
+    description: "Create a mini escape-room challenge in one room. It must include 3 connected clues and one final code or answer. Someone else must be able to solve it without help. Submit the clues, final answer, and how long it took them."
+  },
+  {
+    id: "family-quiz-show",
+    title: "Family Quiz Show",
+    points: 60,
+    icon: "📺",
     category: "creative",
-    description: "Invent a no-oven snack using at least 4 ingredients already in the house. Give it a ridiculous product name, rate it on taste and weirdness, and write a one-sentence pitch. Clean up the kitchen to make the challenge count."
+    description: "Create and host a family quiz show with 20 questions: 5 math, 5 music or art, 5 Minecraft or games, and 5 weird facts. Include scoring rules and one bonus round. Submit the questions and winner."
+  },
+  {
+    id: "future-invention-ad",
+    title: "Future Invention Ad",
+    points: 45,
+    icon: "🚀",
+    category: "creative",
+    description: "Invent a product from 100 years in the future and create an advertisement for it. Include the product name, what problem it solves, 3 features, a price, and one ridiculous warning label."
   }
 ];
